@@ -144,7 +144,7 @@ async def handler(event: Message):
                 if len(args) > 1:
                     if args[1].isdigit():
                         if int(args[1]) > 0:
-                            m = re.search(r'([a-zA-Z0-9._])+$', args[0])
+                            m = re.search(r'id[0-9]+|[a-zA-Z0-9._]+$', args[0])
                             get_user2 = await api.users.get(m[0])
                             # Если такая страница есть
                             if get_user2 != []:
